@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <link rel="icon" href="data:,">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+    integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+  <script src="./js/script.js"></script>
+  <title>Hello, world!</title>
+</head>
+
+<body style=" background-color: #18191a;">
+  <%- include('./partials/navbar') %>
+
+    <div class="container row mx-auto gap-4 mt-3 text-white">
+      <% if(result && result.length>0){ result.forEach(element=> {%>
+
+
+
+
+        <div class="card col-4 col-md-3 mx-auto" style="width: 18rem; background-color: #242526;">
+          <a href="<%= element._id.toString() %>"> <img src="<%= element.imgProfile %>" class="card-img-top"
+              alt="..."></a>
+          <div class="card-body text-center">
+            <h5 class="card-title">
+              <%= element.name+' '+element.surname %></h5>
+            
+              <input type="button" onclick="acceptRefuseRequestFriend('<%=element._id %>',true)" value="accetta">
+                <input type="button" onclick="acceptRefuseRequestFriend('<%= element._id %>',false)" value="rifiuta">
+
+
+
+          </div>
+        </div>
+
+
+        <%})}else{%>
+          <h1 class="text-center">non hai richieste</h1>
+          <%}%>
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"></script>
+
+</body>
+
+</html>

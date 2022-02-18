@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <link rel="icon" href="data:,">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+    integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+  <script src="./js/script.js"></script>
+
+  <title>Hello, world!</title>
+</head>
+
+<body class=" ">
+  <%- include('../partials/navbar') %>
+
+
+    <% if(search){search.forEach(element=>{%>
+
+
+      <div class="card mb-3" style="max-width: 540px;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <a href="<%=element._id %>"><img src="<%= element.imgProfile %>" class="img-fluid rounded-start"
+                alt="..."></a>
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">
+                <%= element.name %>
+              </h5>
+
+              <% if(element._id.toString()===user._id.toString()){%>
+
+                <h6>Sei tu</h6>
+
+                <%}else if(user.friendRequest.includes(element._id.toString())){%>
+                  <input type="button" onclick="acceptRefuseRequestFriend('<%=element._id %>',true)" value="accetta">
+                  <input type="button" onclick="acceptRefuseRequestFriend('<%= element._id %>',false)" value="rifiuta">
+
+                  <%}else if(user.friendRequestSended.includes(element._id.toString())){%>
+
+                    <button type="button" class="btn btn-outline-success"
+                      onclick="removeMyRequestFriend('<%= element._id %>')">annulla richiesta</button>
+
+                    <%}else if(user.friends.includes(element._id.toString())){%>
+
+                      <h6>siete amici</h6>
+
+                      <%}else{%>
+                        <button type="button" class="btn btn-outline-success"
+                          onclick="addFriend('<%= element._id %>')">invia richiesta</button>
+
+                        <%}%>
+
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+      <%})}else{%>
+        <h5>non ci sono post</h5>
+        <%}%>
+
+
+
+
+
+
+
+
+
+
+
+
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+            crossorigin="anonymous"></script>
+
+</body>
+
+</html>

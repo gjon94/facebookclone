@@ -1,0 +1,87 @@
+<div class="container-fluid sticky-top">
+    <nav class="navbar  navbar-dark   sticky-top row" style="background-color: #242526;">
+        <div class="container-fluid">
+
+            <!-- ////primo blocco -->
+            <div class="col col-md-4 d-flex">
+                <a class="navbar-brand" href="/">
+                    <i class="fab fa-facebook " style="font-size: 30px;"></i>
+                </a>
+                <form class="d-flex" action="/" method="post">
+                    <input class="form-control me-2 rounded-pill" name="search" id="search" type="search"
+                        placeholder="Search" aria-label="Search">
+                </form>
+            </div>
+
+            <!--Secondo blocco-->
+            <div class="d-none d-md-block  col-md-4 ">
+                <ul class="navbar-nav d-flex flex-row mb-2 mb-lg-0 justify-content-around" style=" width: 100%;">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fas fa-home" style="font-size: 30px;"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fab fa-youtube" style="font-size: 30px;"></i></a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fas fa-shopping-bag" style="font-size: 30px;"></i></a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/friendrequest"><i class="fas fa-users" style="font-size: 30px;"></i></a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fab fa-playstation" style="font-size: 30px;"></i></a>
+                    </li>
+
+                </ul>
+            </div>
+
+
+            <!--Terzo blocco-->
+            <div class="col col-md-4">
+                <ul class="navbar-nav d-flex  flex-row justify-content-end mb-2 mb-lg-0 gap-4">
+
+                    <!-- user icon -->
+
+                    <li class="nav-item rounded-pill d-none d-xl-block">
+                        <a class="nav-link" href="<%= user._id %>"><img class="rounded-circle"
+                                src="<%= user.imgProfile %>"
+                                style="width: 30px;height: 30px;object-fit: cover;">
+                            <%= user.name %>
+                        </a>
+                    </li>
+                    <!-- ---- -->
+                    <li class="nav-item rounded-circle bg-secondary  d-flex justify-content-center align-items-center"
+                        style="width: 40px; --bs-bg-opacity: .5;">
+                        <a class="nav-link" href="#"><i class="fas fa-shopping-bag" style="font-size: 20px;"></i></a>
+                    </li>
+
+                    <li class="nav-item rounded-circle bg-secondary d-flex justify-content-center align-items-center"
+                        style="width: 40px; --bs-bg-opacity: .5;">
+                        <a class="nav-link" href="#"><i class="fas fa-users"
+                                style="font-size: 20px;"></i></a>
+                    </li>
+
+                    <li class="nav-item rounded-circle bg-secondary d-flex justify-content-center align-items-center"
+                        style="width: 40px; --bs-bg-opacity: .5;">
+                        <span class="nav-link dropdown-toggle btn " href="#" data-bs-toggle="dropdown"
+                            data-bs-display="static" aria-expanded="false" style="font-size: 20px;"></span>
+
+                        <ul class="dropdown-menu dropdown-menu-end position-absolute">
+                            <li><a class="dropdown-item" href="<%= user._id.toString() %>"><%= user.name %></a></li>
+                            <li><a class="dropdown-item" href="/logout">Logout</a></li>
+                        </ul>
+
+                    </li>
+
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+
+
+</div>

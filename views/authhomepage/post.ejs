@@ -1,0 +1,47 @@
+<% user.posts.forEach(element=> {%>
+
+
+    <!-- post template -->
+
+
+    <div class="container p-4 mt-5 border border-dark rounded-3 bg-secondary " style="width: 30vw;">
+
+        <!-- parte superiore foto+nome -->
+        <div class="container-fluid d-flex gap-4 align-items-center">
+            <!-- img -->
+            <div class="overflow-hidden rounded-circle" style="height: 50px;">
+                <img src="<%= user.imgProfile %>" alt=""
+                    style="height: 100%; aspect-ratio: 1/1;">
+            </div>
+            <div>
+                <h5>
+                    <%=user.name%>
+                </h5>
+                <span><%= new Date(element.time).toLocaleString() %></span>
+            </div>
+        </div>
+
+        <!-- parte centrale content -->
+
+        <div class="container-fluid">
+
+            <p>
+                <%= element.content %>
+            </p>
+            <!-- parte centrale foto -->
+
+            <div class="container-fluid" style="height: 30vh;width: 100%;">
+                <img src="<%= element.img %>" alt=""
+                  style="height: 100%;width: 100%; aspect-ratio: 2/1;" >
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+    
+
+
+    <% }) %>

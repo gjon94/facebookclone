@@ -1,0 +1,94 @@
+<div class="container-fluid bg-dark bg-gradient text-center">
+
+  <!-- containercoverIMG -->
+  <div class="container position-relative">
+
+    <div class="container">
+      <img class="w-100" src="<%= user.imgBackground %>" alt="" style="aspect-ratio: 2/1;max-height: 55vh;object-fit: cover;">
+      <button type="button" class="btn btn-secondary position-absolute bottom-0 end-0 d-flex align-items-center gap-2" data-bs-toggle="modal" data-bs-target="#changeimgbackground">
+        <i class="fas fa-image" style="font-size: 25px;aspect-ratio: 1/1;"></i> <p class="d-none d-lg-inline">Modifica Immagine di copertina</p> 
+      </button>
+    </div>
+
+
+    <!-- containerUserIMG -->
+    <div
+      class="container position-absolute  start-50 translate-middle-x  d-flex align-items-center justify-content-center overflow-hidden"
+      style="width: fit-content;bottom: -15px;">
+
+      <button type="button" class="btn btn-secondary position-absolute bottom-0 end-0 rounded-circle" data-bs-toggle="modal" data-bs-target="#changeimgprofile">
+        <i class="fas fa-image" style="font-size: 25px;aspect-ratio: 1/1;"></i>
+      </button>
+        <img class="rounded-circle border border-5 border-secondary" src="<%= user.imgProfile %>" alt="" style="height: 150px; width: 150px;object-fit: cover;">
+    </div>
+
+
+  </div>
+
+  <h1 class="mt-3">
+    <%= user.name +' '+user.surname %></h1>
+        <span>Aggiungi una biografia</span>
+
+
+
+        <!-- coverMenu -->
+        <div class="container d-flex justify-content-between border-top ">
+
+            <div class="d-none d-sm-inline">
+                <a class="btn btn-outline-secondary btn-lg border-0 d-none d-sm-inline" href="#" role="button">Post</a>
+                <a class="btn btn-outline-secondary btn-lg border-0 d-none d-md-inline" href="#" role="button">Informazioni</a>
+                <a class="btn btn-outline-secondary btn-lg border-0 d-none d-md-inline " href="#" role="button">Amici</a>
+                <a class="btn btn-outline-secondary btn-lg border-0 d-none d-xl-inline" href="#" role="button">Foto</a>
+                <a class="btn btn-outline-secondary btn-lg border-0 d-none d-xl-inline" href="#" role="button">Video</a>
+                <a class="btn btn-outline-secondary btn-lg border-0 d-none d-xl-inline" href="#" role="button">Eventi</a>
+                
+                <div class="btn-group d-none d-sm-inline">
+                    <button type="button" class="btn btn-outline-secondary btn-lg dropdown-toggle border-0" data-bs-toggle="dropdown" aria-expanded="false">
+                      Altro
+                    </button>
+                    <ul class="dropdown-menu bg-secondary">
+                      <li><a class="dropdown-item" href="#">Domande</a></li>
+                      <li><a class="dropdown-item" href="#">Gestisci sezioni</a></li>
+                     
+                    </ul>
+                  </div>
+            </div>
+
+
+
+
+          
+            <div class="d-flex align-items-center gap-2 mx-auto m-sm-0">
+
+                <a class="btn btn-primary " href="/stories/create" role="button">Post</a>
+                <a class="btn btn-secondary " href="/stories/create" role="button">Modifica Profilo</a>
+                
+                <div class="btn-group">
+                    <button type="button" class="btn btn-outline-secondary  dropdown-toggle border-0" data-bs-toggle="dropdown" aria-expanded="false">
+                      ---
+                    </button>
+                    <ul class="dropdown-menu bg-secondary">
+                      <li><a class="dropdown-item" href="#">Domande</a></li>
+                      <li><a class="dropdown-item" href="#">Gestisci sezioni</a></li>
+                     
+                    </ul>
+                  </div>
+
+
+
+
+
+            </div>
+
+
+
+
+
+        </div>
+
+
+
+
+
+
+    </div>
